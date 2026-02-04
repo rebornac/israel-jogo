@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Israel: Aliança e Reino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div id="main-menu" class="screen">
+        <div class="menu-content">
+            <h1>ISRAEL</h1>
+            <h2>Aliança e Reino</h2>
+            <div class="menu-buttons">
+                <button onclick="startGame()">INICIAR JORNADA</button>
+                <button onclick="showInstructions()">INSTRUÇÕES</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-instructions" class="screen" style="display:none;">
+        <div class="modal-content">
+            <h2>Como Liderar</h2>
+            <p>Sua missão é conduzir o povo pelo deserto. Suas escolhas afetam os recursos abaixo:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>✨ <b>Fé:</b> Sua conexão com o Divino. Se zerar, o povo se perde.</li>
+                <li>🍞 <b>Pão:</b> O sustento físico. Sem comida, a morte é certa.</li>
+                <li>🕊️ <b>Moral:</b> A vontade do povo de continuar.</li>
+                <li>⚔️ <b>Poder:</b> Sua capacidade de defesa contra tribos inimigas.</li>
+            </ul>
+            <button onclick="hideInstructions()">ENTENDIDO</button>
+        </div>
+    </div>
+
+    <div id="game-container" style="display:none;">
+        <div id="status-bar">
+            <div class="stat-item">✨ Fé: <span id="val-fe">--</span></div>
+            <div class="stat-item">🕊️ Moral: <span id="val-moral">--</span></div>
+            <div class="stat-item">🍞 Pão: <span id="val-alimento">--</span></div>
+            <div class="stat-item">⚔️ Poder: <span id="val-poder">--</span></div>
+            <div class="stat-item">👥 Povo: <span id="val-pop">--</span></div>
+            <button id="btn-voltar" onclick="location.reload()">VOLTAR AO MENU</button>
+        </div>
+        
+        <div class="outerContainer">
+            <div id="story" class="container">
+                </div>
+        </div>
+    </div>
+
+    <div id="end-screen" class="screen" style="display:none;">
+        <h1>JORNADA CONCLUÍDA</h1>
+        <div class="chart-box">
+            <canvas id="statusChart"></canvas>
+        </div>
+        <button onclick="location.reload()">RECOMEÇAR</button>
+    </div>
+
+    <script src="ink.js"></script>
+    <script src="israel_alianca_e_reino_beta.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
