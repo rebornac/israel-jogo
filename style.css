@@ -1,0 +1,228 @@
+/* --- CONFIGURAÇÕES DE FONTES --- */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Special+Elite&display=swap');
+
+/* --- ESTÉTICA GERAL: PAPEL ANTIGO --- */
+body {
+    font-family: 'Special Elite', cursive;
+    background-color: #d2b48c; /* Cor de areia */
+    background-image: url('https://www.transparenttextures.com/patterns/paper.png'); /* Textura de papel */
+    color: #3e2723;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita scroll duplo com a outerContainer */
+}
+
+/* --- SISTEMA DE TELAS (Menu, Instruções e Final) --- */
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    background-color: #e8d5b5;
+    text-align: center;
+    padding: 20px;
+}
+
+#main-menu h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    margin: 0;
+    color: #3e2723;
+}
+
+#main-menu h2 {
+    font-family: 'Quattrocento', serif;
+    font-style: italic;
+    color: #795548;
+    margin-bottom: 30px;
+}
+
+.menu-buttons button, .modal-content button {
+    display: block;
+    width: 280px;
+    padding: 15px;
+    margin: 10px auto;
+    background: #3e2723;
+    color: #e8d5b5;
+    border: 2px solid #bc9b6a;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.menu-buttons button:hover {
+    background: #5d4037;
+    transform: scale(1.05);
+}
+
+/* --- BARRA DE STATUS (HUD) --- */
+#status-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #3e2723;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 1500;
+    font-family: 'Georgia', serif;
+    font-size: 0.9rem;
+}
+
+.stat-item {
+    font-weight: bold;
+    border-right: 1px solid #5d4037;
+    padding-right: 15px;
+}
+
+.stat-item:last-of-type { border: none; }
+
+#btn-voltar {
+    background: #bc9b6a;
+    border: none;
+    color: #3e2723;
+    padding: 5px 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.7rem;
+    border-radius: 3px;
+}
+
+/* --- CONTAINER DA HISTÓRIA --- */
+.outerContainer {
+    position: absolute;
+    top: 50px; /* Logo abaixo do HUD */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#story {
+    background: rgba(255, 251, 230, 0.8);
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    min-height: 80vh;
+}
+
+/* --- ELEMENTOS DE TEXTO --- */
+p {
+    font-size: 13pt;
+    line-height: 1.7em;
+    margin-bottom: 1.5em;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Títulos vindos do Ink (# CLASS: titulo) */
+.titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem !important;
+    font-weight: 800;
+    text-align: center;
+    color: #3e2723;
+    margin-bottom: 30px;
+    display: block;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d2b48c;
+    padding-bottom: 10px;
+}
+
+/* Milagre (# CLASS: milagre_texto) */
+.milagre_texto {
+    font-style: italic;
+    color: #af8b09;
+    font-weight: bold;
+    border-left: 5px solid #af8b09;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+/* --- ESCOLHAS (BOTÕES) --- */
+.choice {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.choice a {
+    display: inline-block;
+    background: #795548;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: 0.3s all;
+    border: 2px solid transparent;
+    font-size: 1.1rem;
+}
+
+.choice a:hover {
+    background: #3e2723;
+    transform: translateY(-2px);
+    border-color: #d2b48c;
+}
+
+/* --- TELA FINAL E GRÁFICO --- */
+.chart-box {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Ajustes Mobile */
+@media screen and (max-width: 600px) {
+    #status-bar { font-size: 0.7rem; gap: 10px; }
+    #main-menu h1 { font-size: 2.5rem; }
+    #story { padding: 20px; }
+}
+/* Garante que imagens respeitem o limite do contêiner */
+#story img {
+    max-width: 100%;    /* Nunca maior que a largura do texto */
+    height: auto;       /* Mantém a proporção original */
+    display: block;     /* Remove espaços estranhos abaixo da imagem */
+    margin: 25px auto;  /* Centraliza e dá respiro vertical */
+    border-radius: 8px; /* Opcional: deixa as bordas suaves como as do papel */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Dá profundidade às artes */
+    animation: fadeIn 0.8s ease-in; /* Suaviza a aparição da imagem */
+}
+
+/* Ajuste fino no container para evitar que as imagens "colem" nas bordas em celulares */
+#story {
+    box-sizing: border-box; 
+    padding: 40px; 
+}
+
+@media screen and (max-width: 600px) {
+    #story {
+        padding: 20px; /* Menos espaço lateral em telas pequenas */
+    }
+}
